@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+    border: black;
+    font-family: 'Raleway', sans-serif;
+}
+
+.mobile-container {
+    display: flex;
+    flex-direction: column;
+    width: 375px; /* typical mobile width */
+    height: 667px; /* typical mobile height */
+    border: 1px solid #000; /* Optional: to see the boundary */
+    overflow: hidden;
+    background-color: #f0f0f0; /* Optional: background color for the mobile container */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+.navbar{
+    background-color: #E6EDF2;
+    margin: 0;
+    padding-bottom: 1px;
+}
+
+.top-section{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    padding-left: 1.75rem;
+}
+
+.top-section>h3{
+    margin: 0;
+    color: #0162A0;
+}
+
+.bottom-section{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.75rem;
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
+    position: relative;
+    margin-bottom: 12px;
+    /**the margin bottom here dictates where the light bleu margin of the navbar ends
+    >>I have made the made teh margin to end where the yellow indicator starts
+    >>Here is the formula for how you calculate margin bottom
+    >> margin-bottom=fontSIZE of root(check on chrome inspectot tool) X 0.75*/
+}
+.svg-image {
+    height: 20px;
+    width: auto;
+    filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+.imp-svg {
+    height: 20px;
+    width: auto;
+}
+
+.tab-contents{
+    display: none;
+}
+
+
+.tab-contents.active-tab{
+    display: block;
+}
+
+/******************************************************indicator div******************************************/
+.indicator {
+    position: absolute;
+    bottom: -0.75rem;
+    left: 0;
+    height: 5px; /* Adjust height as needed */
+    width: 50px; /* Adjust width to match tab size or as needed */
+    background-color: #ffbb33; /* Yellow color */
+    border-radius: 2px 2px 0 0; /* Rounded corners only at the top */
+    transform: translateX(-25%); /* Center the indicator */
+    transition: left 0.3s ease; /* Smooth transition */
+
+}
+
+/***********************************pages******************************************************/
+.pages{
+   margin-top: 1rem; 
+   background-color: #f0f0f0;
+   padding: 0.55rem;
+}
+
+.chat-person{
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 4rem;
+    border-radius: 8px;
+    display: flex;
+}
+
+.profile{
+    width: 17%;
+    /*background-color: red;*/
+    border-radius: 8px;
+}
+.message-preview{
+    width:70%;
+    /*background-color: greenyellow;*/
+    border-radius: 8px;
+}
+.time-stamp{
+    width:13%;
+    /*background-color: rgb(44, 202, 150);*/
+    border-radius: 8px;
+}
+
+.customer-profile-pic{
+    height: 100%;
+}
+
+.message-preview{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 1rem;
+    padding-right: 0.95rem;
+    padding-bottom: 0.35rem;
+}
+
+.primary-text{
+    font-weight: 600;
+    font-size: 14px;
+}
+.secondary-text{
+    font-weight: 400;
+    font-size: 15px;
+    color: #5A4747;
+}
+
+.time-stamp{
+    display: flex;
+    flex-direction: column;
+    padding-right: 6px;
+}
+
+.empty-box{
+    height: 50%;
+}
+.time{
+    height: 50%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #B29C9C;
+}
+
+
+/*****************************************Analytics page***********************************************/
+.showcase{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap:0.14rem;
+}
+
+.bleu{
+    color:  #0162A0;
+
+}
+
+.ad-image>img{
+   width: 100%;
+}
+
+.ad-topic{
+    padding-left: 12px;
+}
+
+/**********************floating button********************/
+.white {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    left:calc(50% + 110px);
+    width: 60px;
+    height: 60px;
+    background-color:#34B7F1; /* bleu*/
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.floating-button:hover {
+    background-color: #ffbb33; /* yellow hover */
+}
+
+/*****************************People management*************************************/
+.secondary-bleu{
+    /*color:#0162A0;*/
+    opacity: 80%;
+  
+}
+
+/***********************************navbar-in-message**********************************************/
+.message-top-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Aligns items vertically centered */
+    padding: 10px 15px; /* Padding around the section */
+    background-color: #ffffff; /* Background color of the navbar */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for a subtle effect */
+    padding-right: 50px;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.image{
+    height: 56px;
+    margin-right: 20px;
+}
+/*.image>img{
+    height: 56px;
+}*/
+
+.image>img{
+    height: 100%;
+}
+
+.name>h3{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.person{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*.icons{
+    width:80px;
+    display: flex;
+    justify-content: space-evenly;
+}*/
+
+
+
+.icons {
+    display: flex;
+    align-items: center; /* Align icons vertically centered */
+    gap: 15px; /* Space between icons */
+    border: 1px solid #69696923; /* Border color */
+    height: 42px;
+    width: 62px;
+    border-radius: 5px; /*border settings*/
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*padding: 5px; /* Padding around the icon */
+    position: relative; /* To position the pseudo-element correctly */
+   
+    
+}
+
+.icon-mss {
+    font-size: 17px; /* Size of the icons */
+    color: #333; /* Icon color */
+    cursor: pointer; /* Change cursor to pointer for clickable icons */
+    transition: color 0.3s; /* Smooth color transition */
+    opacity: 85%;
+}
+
+
+.icon-mss:hover {
+    color: #0078d4; /* Change color on hover */
+}
+
+.fa-video{
+    margin-left: 5px;
+}
+
+.fa-phone{
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.icon-wrapper::after {
+    content: '';
+    position: absolute;
+    right: -8px; /* Adjust to your preference */
+    width: 1px;
+    height: 100%;
+    background-color: #33333338; /* Line color */
+}
+
+.icon-wrapper:last-child::after {
+    display: none; /* Remove the line after the last icon */
+}
+
+/*********************************************input keyboard************************************************/
+/* Chat input container styles */
+.chat-input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.attach-button, .send-button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #888;
+    margin: 0 10px;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.attach-button:hover, .send-button:hover {
+    color: #0078d4; /* Change color on hover */
+}
+
+.chat-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+    font-size: 16px;
+    color: #333;
+    margin: 0 10px;
+}
+
+.chat-input::placeholder {
+    color: #999;
+}
+
+.emoji-button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #888;
+    margin: 0 10px;
+    padding: 5px;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.emoji-button:hover {
+    color: #0078d4; /* Change color on hover */
+}
+
+.conversation {
+    flex: 1; /* Takes up remaining space */
+    overflow-y: auto; /* Allows scrolling if content overflows */
+}
+
+.chat-input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px; /* Increased right padding to prevent overflow */
+    padding-left: 0;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Ensures padding and border are included in the total width */
+}
+
+.chat-input-container .attach-button,
+.chat-input-container .emoji-button,
+.chat-input-container .send-button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #888;
+    margin: 0 8px; /* Reduced margin to fit within the container */
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.send-button{
+    margin-right: 25px;
+}
+
+.chat-input-container .chat-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+    font-size: 16px;
+    color: #333;
+    margin: 0 8px; /* Reduced margin to fit within the container */
+}
+
+.fa-paper-plane:hover {
+    color: #0078d4; /* Change color on hover */
+
+}
+
+.attach-button:hover{
+    color: #0078d4; /* Change color on hover */
+}
+
+.emoji-button:hover{
+    color: #ffbb33;
+}

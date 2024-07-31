@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+    <link rel="stylesheet" href="styles.css">
+    <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+     />
+</head>
+
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="navbar message-top-section">
+            <div class="person">
+                <div class="image profile">
+                    <img id="profileImage" src="images/AYOBA PROFILES.png" alt="profile-picture-of a person">
+                </div>
+                
+                <div class="name"><h3 id="chatName">Nathier</h3></div>
+            </div>
+            <div class="icons">
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-video icon-mss"></i>
+                </div>
+            
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-phone icon-mss"></i>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="conversation"></div>
+        <div class="chat-input-container">
+            <button class="attach-button">
+                <i class="fas fa-paperclip"></i>
+            </button>
+            <button class="emoji-button">
+                <i class="far fa-smile"></i>
+            </button>
+            <input type="text" class="chat-input" placeholder="Type a message">
+            <button class="send-button">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+        
+    </div>
+    
+</body>
+
+<script>
+    // Retrieve the stored name from localStorage
+    var name = localStorage.getItem('chatName');
+    var profileImageSrc = localStorage.getItem('profileImageSrc');
+    if (name) {
+        // Set the text of the h3 element with id 'chatName'
+        document.getElementById('chatName').textContent = name;
+    }
+    if (profileImageSrc) {
+        // Set the src attribute of the img element with id 'profileImage'
+        document.getElementById('profileImage').src = profileImageSrc;
+    }
+</script>
+</html>
